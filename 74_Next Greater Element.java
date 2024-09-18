@@ -11,11 +11,9 @@ class Solution{
                 st.pop();
             }
             
-            if(i<n){
-                
-                if(st.isEmpty()) nge[i] = -1;
-                else nge[i] = st.peek();
-            }
+            if(st.isEmpty()) nge[i] = -1;
+            else nge[i] = st.peek();
+
             st.push(arr[i]);
         }
         return nge;
