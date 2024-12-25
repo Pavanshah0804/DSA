@@ -3,9 +3,10 @@ import java.util.*;
 class Solution {
     public static boolean wordBreak(String s, List<String> wordDict) {
         boolean []table = new boolean[s.length()+1];
-        table[0] = true;
+        table[0] = true; //empty string is always segmented
 
         for (int i = 1; i <= s.length(); i++) {
+            //check all substring ending at position i
             for (int j = 0; j < i; j++) {
                 if (table[j] && wordDict.contains(s.substring(j, i))) {
                     table[i] = true;
@@ -27,6 +28,4 @@ class Solution {
         
         System.out.println(wordBreak(s,dictionary));
     }
-    
 }
-
